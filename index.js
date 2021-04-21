@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 const app = express()
 
 mongoose.connect(
-    'mongodb+srv://oolivos:12345@cluster0.s1nu5.mongodb.net/unisangil', 
+    'mongo_db_coneection', 
     {
         useNewUrlParser: true, 
         useUnifiedTopology: true
