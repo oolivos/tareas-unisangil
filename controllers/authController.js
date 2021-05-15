@@ -8,12 +8,12 @@ const login = async (req, resp) => {
     if(user){
         const valido = await bcryptjs.compareSync(password, user.password)
         if(valido){
-            jwt.sign({uid: user._id, email: user.email}, 'huyeskhdf8753', (error, token) => {
+            jwt.sign({uid: user._id, email: user.email}, process.env.JWT_SALT,{expiresIn: '24h'}, (error, token) => {
                 if(token){
                    return resp.status(200).json({
                        user: user,
                        token: token
-                   }) 
+                   })
                 }
                 if(error) {
                     resp.status(500).send(error)

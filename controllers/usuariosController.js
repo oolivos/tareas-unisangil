@@ -18,6 +18,7 @@ const createUsuario = async (req, resp) => {
 }
 
 const getAllUsuarios = async ( req, resp ) => {
+    console.log(req.auth)
     try {
         return resp.json(await Usuario.find())  
     } catch (error) {

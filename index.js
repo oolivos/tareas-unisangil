@@ -1,11 +1,12 @@
 const express  = require('express')
 const mongoose = require('mongoose')
+require('dotenv').config()
 
 
 const app = express()
 
 mongoose.connect(
-    'mongo_db_coneection', 
+    process.env.MONGO_DB_CONN,
     {
         useNewUrlParser: true, 
         useUnifiedTopology: true
